@@ -9,7 +9,7 @@ import Foundation
 
 
 struct Product: Identifiable {
-    let id: Int
+    var id = UUID()
     var title: String
     var price: Double
     var quantity: Int

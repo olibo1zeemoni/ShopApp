@@ -2,20 +2,24 @@
 //  ContentView.swift
 //  ShopApp
 //
-//  Created by Olibo moni on 10/10/2023.
+//  Created by Olibo moni on 09/10/2023.
 //
 
 import SwiftUI
+import GRDB
 
-struct ContentView: View {
+struct ProductsListView: View {
     
-    @Binding var products: [Product]
+    @StateObject var productViewModel = ProductViewModel()
+    @State private var isPresentingSheet = false
+    @State var newProduct = ProductViewModel.emptyProduct
+    
     
     var body: some View {
         NavigationStack {
             List {
                 Section("Products") {
-                    ForEach(products){ product in
+                    ForEach(productViewModel.products){ product in
                         HStack{
                             Text(product.title)
                             Spacer()
@@ -32,12 +36,27 @@ struct ContentView: View {
                 
             }
             .listStyle(InsetGroupedListStyle())
-            .navigationTitle("Store")
+            .toolbar {
+                Button {
+                    isPresentingSheet = true
+                } label: {
+                    Image(systemName: "plus")
+                }
+
+            }
+            .sheet(isPresented: $isPresentingSheet) {
+                NavigationStack{
+                    AddProductView(product: $newProduct, createButtonAction: {
+                        productViewModel.products.append(newProduct)
+                        newProduct = ProductViewModel.emptyProduct
+                    })
+                }
+            }
+            
         }
     }
     
     private func formatPrice(_ value: Double) -> String {
-        
             let formatter = NumberFormatter()
             formatter.numberStyle = .currency
             formatter.currencySymbol = "GH¢"
@@ -50,6 +69,8 @@ struct ContentView: View {
         }
 }
 
-//#Preview {
-//    ContentView()
-//}
+#Preview {
+    
+    ProductsListView()
+        
+}
