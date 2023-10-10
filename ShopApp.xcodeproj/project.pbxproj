@@ -68,6 +68,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F59166BB2AD5731200D45143 /* Local Database Approach */ = {
+			isa = PBXGroup;
+			children = (
+				F596D0152AD4491B0015DEF9 /* ProductsListView.swift */,
+				F5B3FF9A2AD4D9900032C1AD /* ProductViewModel.swift */,
+				F5B3FF962AD4CA7A0032C1AD /* LocalDatabase.swift */,
+			);
+			path = "Local Database Approach";
+			sourceTree = "<group>";
+		};
 		F596D0072AD4491B0015DEF9 = {
 			isa = PBXGroup;
 			children = (
@@ -92,10 +102,8 @@
 				F596D0132AD4491B0015DEF9 /* ShopAppApp.swift */,
 				F5B3FF9C2AD4E2E90032C1AD /* ContentView.swift */,
 				F596D0212AD44BBD0015DEF9 /* DataController.swift */,
-				F596D0152AD4491B0015DEF9 /* ProductsListView.swift */,
 				F5B3FF982AD4D15C0032C1AD /* AddProductView.swift */,
-				F5B3FF9A2AD4D9900032C1AD /* ProductViewModel.swift */,
-				F5B3FF962AD4CA7A0032C1AD /* LocalDatabase.swift */,
+				F59166BB2AD5731200D45143 /* Local Database Approach */,
 				F596D0252AD44BCC0015DEF9 /* Resources */,
 				F596D0222AD44BBD0015DEF9 /* Product.swift */,
 				F596D0172AD4491D0015DEF9 /* Assets.xcassets */,

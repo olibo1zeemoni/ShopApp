@@ -30,7 +30,7 @@ struct ProductsListView: View {
                 
                 Section("Controls") {
                     Button("load all") {
-                        //dataController.loadAllData()
+                        
                     }
                 }
                 
