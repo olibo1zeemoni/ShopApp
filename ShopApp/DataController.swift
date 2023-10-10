@@ -20,13 +20,6 @@ class DataController: ObservableObject {
     
     init() {
         
-//                 let task = Task<DatabaseQueue, Error> {
-//                     try getDatabaseQueue()
-//                 }
-//                 let dbQueue = try await task.value
-//                 self.dbQueue = dbQueue
-//        self.dbQueue = try? getDatabaseQueue()
-//        print("initialized")
     }
     
     private func getDatabaseQueue() throws -> DatabaseQueue {
@@ -43,28 +36,7 @@ class DataController: ObservableObject {
         }
         return try DatabaseQueue(path: dbPath)
     }
- /*
-    func loadAllData() async throws {
-       Task { @MainActor in
-           dbQueue = try getDatabaseQueue()
-           
-           do {
-               try await dbQueue?.read { db in
-                   let rows = try Row.fetchAll(db, sql: "SELECT p_title, p_price, p_quantity FROM Product ORDER BY p_id")
-                   
-                   for row in rows {
-                       self.products.append(Product(title: row[0], price: row[1], quantity: row[2]))
-                       
-                   }
-               }
-           }  catch {
-               print(error.localizedDescription)
-           }
-           
-       }
 
-    }
-    */
     func loadAllData() async throws {
         do {
             let rows = try await withCheckedThrowingContinuation { continuation in
@@ -100,48 +72,52 @@ class DataController: ObservableObject {
 
 
 
-//extension DataController {
-//    
-//     func select1Query() {
-//        products = []
-//        
-//         try? dbQueue.read { db in
-//            let row = try Row.fetchOne(db, sql: "SELECT p_title, p_price, p_quantity FROM Product WHERE p_id = 3")!
-//            
-//            products.append(Product(title: row[0], price: row[1], quantity: row[2]))
-//        }
-//        
-//    }
-//    
-//     func select2Query() {
-//        products = []
-//        
-//         try? dbQueue.read { db in
-//            let rows = try Row.fetchAll(db, sql: "SELECT p_title, p_price, p_quantity FROM Product WHERE p_price < 3")
-//            
-//            for row in rows {
-//                products.append(Product(id: title: row[0], price: row[1], quantity: row[2]))
-//            }
-//        }
-//        
-//    }
-//    
-//    func saveObject(title: String, price: Double, quantity: Int) {
-//        try? dbQueue.write { db in
-//            try db.execute(sql: "INSERT INTO Product (p_title, p_price, p_quantity) VALUES (?, ?, ?)", arguments: [title, price, quantity])
-//        }
-//    }
-//    
-//    func updateProduct(quantity: Int, title: String) {
-//        try? dbQueue.write { db in
-//            try db.execute(sql: "UPDATE Product SET p_quantity = ? WHERE p_title = ?", arguments: [quantity, title])
-//        }
-//    }
-//    
-//    func deleteProduct(title: String) {
-//        try? dbQueue.write { db in
-//            try db.execute(sql: "DELETE FROM Product WHERE p_title = ?", arguments: [title])
-//        }
-//    }
-//    
-//}
+extension DataController {
+    
+     func select1Query() {
+        products = []
+        
+         try? dbQueue?.read { db in
+            let row = try Row.fetchOne(db, sql: "SELECT p_title, p_price, p_quantity FROM Product WHERE p_id = 3")!
+            
+            products.append(Product(title: row[0], price: row[1], quantity: row[2]))
+        }
+        
+    }
+    
+     func select2Query() {
+        products = []
+        
+         try? dbQueue?.read { db in
+            let rows = try Row.fetchAll(db, sql: "SELECT p_title, p_price, p_quantity FROM Product WHERE p_price < 40")
+            
+            for row in rows {
+                products.append(Product(title: row[0], price: row[1], quantity: row[2]))
+            }
+        }
+        
+    }
+    
+    func saveObject(product: Product) throws {
+        do{
+            try dbQueue?.write { db in
+                try db.execute(sql: "INSERT INTO Product (p_id, p_title, p_price, p_quantity) VALUES (?, ?, ?, ?)", arguments: [Int.random(in: 20...100), product.title, product.price, product.quantity])
+            }
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+    
+    func updateProduct(quantity: Int, title: String) {
+        try? dbQueue?.write { db in
+            try db.execute(sql: "UPDATE Product SET p_quantity = ? WHERE p_title = ?", arguments: [quantity, title])
+        }
+    }
+    
+    func deleteProduct(title: String) {
+        try? dbQueue?.write { db in
+            try db.execute(sql: "DELETE FROM Product WHERE p_title = ?", arguments: [title])
+        }
+    }
+    
+}

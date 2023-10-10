@@ -10,6 +10,10 @@ import SwiftUI
 struct ContentView: View {
     
     @Binding var products: [Product]
+    @State private var isPresentingNewProduct = false 
+    @Binding var newProduct: Product
+    var addNew: ()->Void
+    var reloadProducts: ()->Void
     
     var body: some View {
         NavigationStack {
@@ -25,14 +29,22 @@ struct ContentView: View {
                 }
                 
                 Section("Controls") {
-                    Button("load all") {
-                        //dataController.loadAllData()
+                    Button("Add") {
+                        isPresentingNewProduct = true
+                    }
+                    Button("Reload") {
+                        reloadProducts()
                     }
                 }
                 
             }
             .listStyle(InsetGroupedListStyle())
             .navigationTitle("Store")
+            .sheet(isPresented: $isPresentingNewProduct) {
+                AddProductView(product: $newProduct) {
+                    addNew()
+                }
+            }
         }
     }
     

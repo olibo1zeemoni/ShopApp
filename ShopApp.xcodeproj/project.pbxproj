@@ -8,16 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		38656CCA6A03F533EC05F896 /* Pods_ShopApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BC6F7FB6FB23CF406CBFB20 /* Pods_ShopApp.framework */; };
+		F59166B72AD55E6000D45143 /* LocalDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B3FF962AD4CA7A0032C1AD /* LocalDatabase.swift */; };
+		F59166B82AD55E6500D45143 /* ProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B3FF9A2AD4D9900032C1AD /* ProductViewModel.swift */; };
+		F59166B92AD55E6D00D45143 /* AddProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B3FF982AD4D15C0032C1AD /* AddProductView.swift */; };
+		F59166BA2AD55E7100D45143 /* ProductsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F596D0152AD4491B0015DEF9 /* ProductsListView.swift */; };
 		F596D0142AD4491B0015DEF9 /* ShopAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F596D0132AD4491B0015DEF9 /* ShopAppApp.swift */; };
-		F596D0162AD4491B0015DEF9 /* ProductsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F596D0152AD4491B0015DEF9 /* ProductsListView.swift */; };
 		F596D0182AD4491D0015DEF9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F596D0172AD4491D0015DEF9 /* Assets.xcassets */; };
 		F596D01B2AD4491D0015DEF9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F596D01A2AD4491D0015DEF9 /* Preview Assets.xcassets */; };
 		F596D0232AD44BBD0015DEF9 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F596D0212AD44BBD0015DEF9 /* DataController.swift */; };
 		F596D0242AD44BBD0015DEF9 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = F596D0222AD44BBD0015DEF9 /* Product.swift */; };
 		F596D0272AD44BE10015DEF9 /* shop.db in Resources */ = {isa = PBXBuildFile; fileRef = F596D0262AD44BE10015DEF9 /* shop.db */; };
-		F5B3FF972AD4CA7A0032C1AD /* LocalDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B3FF962AD4CA7A0032C1AD /* LocalDatabase.swift */; };
-		F5B3FF992AD4D15C0032C1AD /* AddProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B3FF982AD4D15C0032C1AD /* AddProductView.swift */; };
-		F5B3FF9B2AD4D9900032C1AD /* ProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B3FF9A2AD4D9900032C1AD /* ProductViewModel.swift */; };
 		F5B3FF9D2AD4E2E90032C1AD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B3FF9C2AD4E2E90032C1AD /* ContentView.swift */; };
 /* End PBXBuildFile section */
 
@@ -235,13 +235,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F5B3FF9B2AD4D9900032C1AD /* ProductViewModel.swift in Sources */,
-				F5B3FF992AD4D15C0032C1AD /* AddProductView.swift in Sources */,
 				F5B3FF9D2AD4E2E90032C1AD /* ContentView.swift in Sources */,
-				F596D0162AD4491B0015DEF9 /* ProductsListView.swift in Sources */,
 				F596D0242AD44BBD0015DEF9 /* Product.swift in Sources */,
+				F59166B92AD55E6D00D45143 /* AddProductView.swift in Sources */,
+				F59166B82AD55E6500D45143 /* ProductViewModel.swift in Sources */,
+				F59166BA2AD55E7100D45143 /* ProductsListView.swift in Sources */,
 				F596D0232AD44BBD0015DEF9 /* DataController.swift in Sources */,
-				F5B3FF972AD4CA7A0032C1AD /* LocalDatabase.swift in Sources */,
+				F59166B72AD55E6000D45143 /* LocalDatabase.swift in Sources */,
 				F596D0142AD4491B0015DEF9 /* ShopAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

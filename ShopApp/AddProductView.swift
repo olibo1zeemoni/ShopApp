@@ -17,7 +17,7 @@ struct AddProductView: View {
             
             Form {
                 Section("Create New Product") {
-                    TextField("Id", value: $product.id, formatter: NumberFormatter())
+//                    TextField("Id", value: $product.id, formatter: NumberFormatter())
                     TextField("Title", text: $product.title)
                     TextField("Quantity", value: $product.quantity, formatter: NumberFormatter())
                     TextField("Price", value: $product.price, formatter: currencyFormatter)
