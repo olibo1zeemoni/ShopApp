@@ -12,7 +12,8 @@
 		F59166B82AD55E6500D45143 /* ProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B3FF9A2AD4D9900032C1AD /* ProductViewModel.swift */; };
 		F59166B92AD55E6D00D45143 /* AddProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B3FF982AD4D15C0032C1AD /* AddProductView.swift */; };
 		F59166BA2AD55E7100D45143 /* ProductsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F596D0152AD4491B0015DEF9 /* ProductsListView.swift */; };
-		F596D0142AD4491B0015DEF9 /* ShopAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F596D0132AD4491B0015DEF9 /* ShopAppApp.swift */; };
+		F59166BD2AD7279200D45143 /* AsyncImage+Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59166BC2AD7279200D45143 /* AsyncImage+Cache.swift */; };
+		F59166C02AD72E8200D45143 /* ShopAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F596D0132AD4491B0015DEF9 /* ShopAppApp.swift */; };
 		F596D0182AD4491D0015DEF9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F596D0172AD4491D0015DEF9 /* Assets.xcassets */; };
 		F596D01B2AD4491D0015DEF9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F596D01A2AD4491D0015DEF9 /* Preview Assets.xcassets */; };
 		F596D0232AD44BBD0015DEF9 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F596D0212AD44BBD0015DEF9 /* DataController.swift */; };
@@ -24,6 +25,8 @@
 /* Begin PBXFileReference section */
 		02C98C1BA6DB4982AD30B133 /* Pods-ShopApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShopApp.debug.xcconfig"; path = "Target Support Files/Pods-ShopApp/Pods-ShopApp.debug.xcconfig"; sourceTree = "<group>"; };
 		1BC6F7FB6FB23CF406CBFB20 /* Pods_ShopApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShopApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F59166BC2AD7279200D45143 /* AsyncImage+Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AsyncImage+Cache.swift"; sourceTree = "<group>"; };
+		F59166BE2AD729EA00D45143 /* ShopApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopApp.swift; sourceTree = "<group>"; };
 		F59402DBC73992D8C950600E /* Pods-ShopApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShopApp.release.xcconfig"; path = "Target Support Files/Pods-ShopApp/Pods-ShopApp.release.xcconfig"; sourceTree = "<group>"; };
 		F596D0102AD4491B0015DEF9 /* ShopApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShopApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F596D0132AD4491B0015DEF9 /* ShopAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopAppApp.swift; sourceTree = "<group>"; };
@@ -99,10 +102,12 @@
 		F596D0122AD4491B0015DEF9 /* ShopApp */ = {
 			isa = PBXGroup;
 			children = (
+				F59166BE2AD729EA00D45143 /* ShopApp.swift */,
 				F596D0132AD4491B0015DEF9 /* ShopAppApp.swift */,
 				F5B3FF9C2AD4E2E90032C1AD /* ContentView.swift */,
 				F596D0212AD44BBD0015DEF9 /* DataController.swift */,
 				F5B3FF982AD4D15C0032C1AD /* AddProductView.swift */,
+				F59166BC2AD7279200D45143 /* AsyncImage+Cache.swift */,
 				F59166BB2AD5731200D45143 /* Local Database Approach */,
 				F596D0252AD44BCC0015DEF9 /* Resources */,
 				F596D0222AD44BBD0015DEF9 /* Product.swift */,
@@ -246,11 +251,12 @@
 				F5B3FF9D2AD4E2E90032C1AD /* ContentView.swift in Sources */,
 				F596D0242AD44BBD0015DEF9 /* Product.swift in Sources */,
 				F59166B92AD55E6D00D45143 /* AddProductView.swift in Sources */,
+				F59166C02AD72E8200D45143 /* ShopAppApp.swift in Sources */,
 				F59166B82AD55E6500D45143 /* ProductViewModel.swift in Sources */,
 				F59166BA2AD55E7100D45143 /* ProductsListView.swift in Sources */,
 				F596D0232AD44BBD0015DEF9 /* DataController.swift in Sources */,
 				F59166B72AD55E6000D45143 /* LocalDatabase.swift in Sources */,
-				F596D0142AD4491B0015DEF9 /* ShopAppApp.swift in Sources */,
+				F59166BD2AD7279200D45143 /* AsyncImage+Cache.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
